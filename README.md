@@ -21,7 +21,7 @@
 <pre><code>crontab -e</pre></code>
 进入编辑状态
 
-添加行
+添加行（每日中午12点 执行 并把输出存在 log.log文件上）
 <pre><code>0 12 * * * /usr/local/bin/python3 /home/gdhelper/main.py >> /home/gdhelper/log.log 2>&1
 </pre></code>
 
