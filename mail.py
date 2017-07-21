@@ -37,7 +37,7 @@ def SemdMail( _json):
 	server.connect('smtp.163.com',25)  
 	server.login(senderAccount,senderPassword)
 	for recv in receivers:
-		print(recv)
+		print(recv+'\n')
 		try:
 			message = MIMEText(MailContentTpl.format(_json['message']), 'plain', 'utf-8')
 			message['From'] = sender
@@ -45,9 +45,9 @@ def SemdMail( _json):
 			message['Subject'] = MailTitleTpl;
 			if DEBUG_MODE == False:
 				server.sendmail(sender,recv,message.as_string()) 
-			print("send success") 
+			print("send success\n") 
 		except smtplib.SMTPException:
-			print("send fail")
+			print("send fail\n")
 			
 	server.quit()
 	return
